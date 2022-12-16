@@ -5,8 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ÁRBOL DE NAVIDAD CARLOS & LORE</title>
 	<style>
-		body{ background: rgba(0, 0, 0, 0.8); display: grid; justify-content: center; text-align: center; }
-		h1{ color: greenyellow;}
+        
+		body{ background: rgba(0, 0, 0, 0.8); display: grid; justify-content: center; text-align: center; font-style:italic;
+        }
+        h1{ color: greenyellow;}
         h2{ color: yellow}
 		p{ color: teal; }
 		.estrella{font-size: 100px; animation:colores 1s infinite;}
@@ -18,16 +20,22 @@
         
         }
         #playBtn{
-            border: none;
+            width:90px;
+            height:40px;
+            border-radius: 10px;
             background-color: greenyellow;
             color: black;
             animation: colores 5s infinite;
+            font-size: 18px;
         }
         #pauseBtn{
-            border: none;
+            width:90px;
+            height:40px;
+            border-radius: 10px;
             background-color: red;
             color: black;
             animation: colores 5s infinite;
+            font-size: 18px;
             
         }
 		@keyframes colores {
@@ -47,8 +55,9 @@
     </div>
     <div class="estrella">✰</div>
     <div id="arbol"></div>
-    <h1 class="texto">FELIZ NAVIDAD !! Y PROSPERO AÑO NUEVO 2023</h1>
-    <h2>Carlos Y Lore</h2>
+    <h1 class="texto">¡FELIZ NAVIDAD!
+         Y PROSPERO AÑO NUEVO 2023</h1>
+    <h2>Les desean Carlos Y Lore</h2>
     
     <script>
         var hojas = "";
