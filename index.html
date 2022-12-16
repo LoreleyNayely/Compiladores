@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ÁRBOL DE NAVIDAD CARLOS & LORE</title>
+	<style>
+		body{ background: rgba(0, 0, 0, 0.8); display: grid; justify-content: center; text-align: center; }
+		h1{ color: greenyellow;}
+        h2{ color: yellow}
+		p{ color: teal; }
+		.estrella{font-size: 100px; animation:colores 1s infinite;}
+        
+        .rojo{
+            color: red;
+            transition: all 1.5s;
+            font-size: 30px;
+        
+        }
+        #playBtn{
+            border: none;
+            background-color: greenyellow;
+            color: black;
+            animation: colores 5s infinite;
+        }
+        #pauseBtn{
+            border: none;
+            background-color: red;
+            color: black;
+            animation: colores 5s infinite;
+            
+        }
+		@keyframes colores {
+			0%{ color: red; }
+			33%{ color: rgb(76, 223, 7); }
+			66%{ color: rgb(255, 115, 0);}
+			100%{ color: yellow;}
+		}
+	</style>
+</head>
+<body>
+
+    <div class="button-container">
+        <button id="playBtn">Play</button>
+        <button id="pauseBtn">Pause</button>
+        <script src="sonido.js"></script>
+    </div>
+    <div class="estrella">✰</div>
+    <div id="arbol"></div>
+    <h1 class="texto">FELIZ NAVIDAD !! Y PROSPERO AÑO NUEVO 2023</h1>
+    <h2>Carlos Y Lore</h2>
+    
+    <script>
+        var hojas = "";
+        [10,2].forEach(row => {
+            new Array(row).fill('').forEach((v,i)=>{
+                hojas += ([
+                ...Array(9-i).fill("<span> </span>"),
+                ...Array(1+i*2).fill("<span class='rojo'>*</span>"),
+                ...Array(9-i).fill("<span> </span>"),
+
+                ].join(''))
+                hojas += "<br>"
+            })
+        })
+        document.getElementById("arbol").innerHTML = hojas
+
+        let animacion = document.querySelectorAll(".rojo");
+        animacion.innerHTML = hojas
+        function animar() {
+            for (var i = 0; i < animacion.length; i++) {
+                let tiempo = i/20 +1
+                animacion[i].style.animation = "colores "+tiempo+"s infinite"
+                
+            }
+            
+        }
+        
+                    
+
+        window.addEventListener('load',animar)
+        </script>
+    
+</body>
+</html>
